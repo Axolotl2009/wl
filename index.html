@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="js" href="index.js">
+    <title>Simple Shopping Website</title>
+    
+</head>
+
+<body>
+    <header>
+        
+        
+       
+        <div class="search-container">
+            <button onclick="searchProduct()">Search</button>
+            <input type="text" id="searchInput" placeholder="Search for a product..." oninput="updateDropdown()">
+           
+            <div id="searchDropdown" class="search-dropdown"></div>
+        </div>
+        <h1> Shopping Website   </h1>
+        <label for="categorySelect">Select a Category:</label>
+        <select id="categorySelect">
+            <option value="electronics">Electronics</option>
+            <option value="clothing">Clothing</option>
+            <option value="home-decor">Home Decor</option>
+            <option value="books">Books</option>
+            <option value="sports">Sports</option>
+            <option value="toys">Toys</option>
+            <option value="beauty">Beauty</option>
+            <option value="kitchen">Kitchen</option>
+            <option value="furniture">Furniture</option>
+            <option value="health">Health</option>
+        </select>
+      
+    <button class="sign-in-button" onclick="redirectToSignIn()">Sign In</button>
+    <div id="cartSection">
+       
+
+    </header>
+   
+        <div class="cart-container">
+            <h2><a href="file:///C:/Users/Huda%20Nagy/Desktop/New%20folder/cart.html" id="cartLink">🛒 Shopping Cart</a></h2>
+            <ul id="cartItems" class="hidden">
+                <!-- Cart items will be dynamically added here -->
+            </ul>
+            <p id="cartTotal">Total Price:$0</p>
+        </div>
+    </div>
+    
+    <section id="products">
+        <section id="products">
+        <div class="product">
+            <img src="shoe.jpg" alt="Product 1">
+            <h2>Adidas shoes</h2>
+            <p>Excellent shoes</p>
+            <p>Price: $20</p>
+            <p>Category: Sport</p>
+            <button onclick="addToCart('Adidas shoes', 20)">Add</button>
+            <button onclick="removeFromCart()">Remove</button>
+        </div>
+        <!-- Add more products with their details -->
+   
+        <div class="product">
+            <img src="bottle.jpg" alt="Product 1">
+            <h2>Adidas bottle</h2>
+            <p>best bottles for your daily workout</p>
+            <p>Price: $30</p>
+            <p>Category : Sport</p>
+            <button onclick="addToCart('Adidas bottle', 30)">Add</button>
+            <span id="quantity"></span>
+            <button onclick="removeFromCart()">Remove</button>
+        </div>
+        <div class="product">
+            <img src="shirt.jpg" alt="Product 1">
+            <h2>Adidas Shirt</h2>
+            <p>Excellent Shirt</p>
+            <p>Price: $200</p>
+            <p>Category : Sport</p>
+            <button onclick="addToCart('Adidas Shirt', 200)">Add</button>
+            <span id="quantity"></span>
+            <button onclick="removeFromCart()">Remove</button>
+        </div>
+        <div class="product">
+            <img src="Shoes.jpeg" alt="Product 1">
+            <h2>Adidas shoes</h2>
+            <p>Excellent shoes</p>
+            <p>Price: $35</p>
+            <p>Category : Sport</p>
+            <button onclick="addToCart('Adidas shoes', 35)">Add</button>
+            <span id="quantity"></span>
+            <button onclick="removeFromCart()">Remove</button>
+        </div>
+        <div class="product">
+            <img src="Protien.jpg" alt="Product 1">
+            <h2>Adidas Earbuds</h2>
+            <p>Excellent for New Gym members</p>
+            <p>Price: $10</p>
+            <p>Category : Sport</p>
+            <button onclick="addToCart('Adidas Glasses', 10)">Add</button>
+            <span id="quantity"></span>
+            <button onclick="removeFromCart()">Remove</button>
+        </div>
+        <div class="product">
+            <img src="Watch.png" alt="Product 1">
+            <h2>Adidas Watch</h2>
+            <p>Excellent For daily work outs</p>
+            <p>Price: $40</p>
+            <p>Category : Sport</p>
+            <button onclick="addToCart('Adidas Watch', 40)">Add</button>
+            <span id="quantity"></span>
+            <button onclick="removeFromCart()">Remove</button>
+        </div>
+        <div class="product">
+            <img src="Cap.jpg" alt="Product 1">
+            <h2>Adidas Caps</h2>
+            <p>Excellent Cap</p>
+            <p>Price: $50</p>
+            <p>Category : Sport</p>
+            <button onclick="addToCart('Adidas Cap', 50)">Add</button>
+            <span id="quantity"></span>
+            <button onclick="removeFromCart()">Remove</button>
+        </div>
+        <div class="product">
+            <img src="S Shoes.jpg" alt="Product 1">
+            <h2>Adidas Sports shoes</h2>
+            <p>Excellent  Sport shoes</p>
+            <p>Price: $50</p>
+            <p>Category : Sport</p>
+            <button onclick="addToCart('Adidas shoes', 50)">Add</button>
+            <span id="quantity"></span>
+            <button onclick="removeFromCart()">Remove</button>
+        </div>
+        <div class="product">
+            <img src="Train.jpg" alt="Product 1">
+            <h2>Adidas Sports Training suit</h2>
+            <p>Excellent  For Training</p>
+            <p>Price: $50</p>
+            <p>Category : Sport</p>
+            <button onclick="addToCart('Adidas Training suit', 50)">Add</button>
+            <span id="quantity"></span>
+            <button onclick="removeFromCart()">Remove</button>
+        </div>
+        <div class="product">
+            <img src="Pants.jpg" alt="Product 1">
+            <h2>Adidas Sports Pants</h2>
+            <p>Excellent  Pants</p>
+            <p>Price: $50</p>
+            <p>Category : Sport</p>
+            <button onclick="addToCart('Adidas Pants', 50)">Add</button>
+            <span id="quantity"></span>
+            <button onclick="removeFromCart()">Remove</button>
+        </div>
+    
+    </section>
+    
+    <div id="searchResult"></div>
+    <script src="script.js"></script>
+    <script>
+ 
+          // Define a variable to store the shopping cart items
+          const cartItems = [];
+
+function redirectToSignIn() {
+    window.location.href = "file:///C:/Users/Huda%20Nagy/Desktop/New%20folder/SSS.html";
+}
+
+function addToCart(productName, price) {
+    // Check if the product is already in the cart
+    const existingItem = cartItems.find(item => item.name === productName);
+
+    if (existingItem) {
+        // If the product is already in the cart, increase the quantity
+        existingItem.quantity++;
+    } else {
+        // If the product is not in the cart, add it with a quantity of 1
+        cartItems.push({ name: productName, price: price, quantity: 1 });
+    }
+
+    // Update the cart display
+    updateCartDisplay();
+}
+
+function removeFromCart(productName) {
+    // Find the index of the product in the cart
+    const index = cartItems.findIndex(item => item.name === productName);
+
+    if (index !== -1) {
+        // Remove the product from the cart
+        cartItems.splice(index, 1);
+    }
+
+    // Update the cart display
+    updateCartDisplay();
+}
+
+function updateCartDisplay() {
+    // Get the cart items ul element
+    const cartList = document.getElementById("cartItems");
+
+    // Clear existing cart items
+    cartList.innerHTML = "";
+
+    // Initialize total price
+    let totalPrice = 0;
+
+    // Add each item to the cart list and calculate total price
+    cartItems.forEach(item => {
+        const listItem = document.createElement("li");
+        listItem.innerHTML = `
+            <div class="cart-item">
+                <span class="cart-item-name">${item.name}</span>
+                <span class="cart-item-quantity">${item.quantity}x</span>
+                <span class="cart-item-price">$${item.price * item.quantity}</span>
+                <button class="remove-button" onclick="removeFromCart('${item.name}')">Remove</button>
+            </div>`;
+        cartList.appendChild(listItem);
+
+        // Update total price
+        totalPrice += item.price * item.quantity;
+    });
+
+    // Display total price
+    const cartTotal = document.getElementById("cartTotal");
+    cartTotal.textContent = `Total: $${totalPrice}`;
+}
+
+function toggleCart() {
+    const cartList = document.getElementById("cartItems");
+    cartList.classList.toggle("hidden");
+}
+function searchProduct() {
+            var searchTerm = document.getElementById("searchInput").value.toLowerCase();
+            var products = document.querySelectorAll(".product");
+            var searchResult = document.getElementById("searchResult");
+
+            // Clear previous search results
+            searchResult.innerHTML = "";
+
+            // Iterate through products to find matching ones
+            products.forEach(function(product) {
+                var productName = product.querySelector("h2").innerText.toLowerCase();
+
+                // Check if the product name contains the search term
+                if (productName.includes(searchTerm)) {
+                    // Clone the matching product and append it to the search result
+                    var clonedProduct = product.cloneNode(true);
+                    searchResult.appendChild(clonedProduct);
+                }
+            });
+        }
+        function addItemToCart() {
+            // Get existing cart items from localStorage or initialize an empty array
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+            // Add a sample item to the cart
+            const newItem = `Product ${cartItems.length + 1}`;
+            cartItems.push(newItem);
+
+            // Update localStorage with the new cart items
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+            // Update the cart link text on the index.html page
+            const cartLink = document.getElementById('cartLink');
+            cartLink.textContent = `🛒 Shopping Cart (${cartItems.length} items)`;
+        }
+        const products = [
+    'Product A',
+    'Product B',
+    'Product C',
+    'Product D',
+    // Add more products as needed
+];
+
+
+function updateDropdown() {
+    const searchInput = document.getElementById('searchInput');
+    const searchDropdown = document.getElementById('searchDropdown');
+
+    // Clear previous items
+    searchDropdown.innerHTML = '';
+
+    const searchTerm = searchInput.value.toLowerCase();
+
+    // Filter products based on the search term
+   
+
+    // Display matching products in the dropdown
+    filteredProducts.forEach(product => {
+        const dropdownItem = document.createElement('div');
+        dropdownItem.classList.add('search-dropdown-item');
+        dropdownItem.textContent = product;
+
+        // Set up a click event to fill the search input with the selected product
+        dropdownItem.addEventListener('click', () => {
+            searchInput.value = product;
+            searchDropdown.style.display = 'none';
+        });
+
+        searchDropdown.appendChild(dropdownItem);
+    });
+
+    // Show or hide the dropdown based on the number of matching products
+    searchDropdown.style.display = filteredProducts.length > 0 ? 'block' : 'none';
+}
+
+function searchProduct() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase(); // Ensure the search term is lowercase
+    const filteredProducts = products.filter(product => product.toLowerCase().includes(searchInput));
+
+    // Assuming products have a "title" property, you can filter based on that as well
+    const filteredTitles = products.filter(product => product.title.toLowerCase().includes(searchInput));
+
+    console.log('Filtered Products:', filteredProducts);
+    console.log('Filtered Titles:', filteredTitles);
+
+    // You can do something with the filtered products, for example, display them in the UI
+}
+
+
+
+</script>
+</body>
+</html>
